@@ -2,8 +2,9 @@ import requests
 
 
 def get_weather(some_city):
-    url = "https://ru.wttr.in/{}?n?M?q?T".format(some_city)
-    response = requests.get(url)
+    params = {"n": "", "M": "", "q": "", "T": "", "lang": "ru"}
+    url = "https://ru.wttr.in/{}".format(some_city)
+    response = requests.get(url, params=params)
     response.raise_for_status()
     return response.text
 
